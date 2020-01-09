@@ -18,3 +18,19 @@ Metacello new
 ## How to depend on it?
 
 ## How to use it?
+
+```Smalltalk
+data := #(a b c d e f g h i j).
+proportions := #(0.5 0.3 0.2).
+```
+
+```Smalltalk
+partitioner := RandomPartitioner new.
+subsets := partitioner split: data using: proportions.
+```
+
+```Smalltalk
+#((d h j a b)
+  (i f e)
+  (g c))
+```
