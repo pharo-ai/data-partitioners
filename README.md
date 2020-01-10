@@ -11,7 +11,7 @@ To install `RandomPartitioner`, go to the Playground (Ctrl+OW) in your [Pharo](h
 ```Smalltalk
 Metacello new
   baseline: 'RandomPartitioner';
-  repository: 'github://olekscode/RandomPartitioner/src';
+  repository: 'github://PharoAI/RandomPartitioner/src';
   load.
 ```
 
@@ -22,7 +22,7 @@ If you want to add a dependency on `RandomPartitioner` to your project, include 
 ```Smalltalk
 spec
   baseline: 'RandomPartitioner'
-  with: [ spec repository: 'github://olekscode/RandomPartitioner/src' ].
+  with: [ spec repository: 'github://PharoAI/RandomPartitioner/src' ].
 ```
 
 If you are new to baselines and Metacello, check out this wonderful [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) tutorial on Pharo Wiki.
