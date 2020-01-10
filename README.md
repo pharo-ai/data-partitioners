@@ -1,5 +1,13 @@
 # RandomPartitioner
 
+[![Build Status](https://travis-ci.org/PharoAI/RandomPartitioner.svg?branch=master)](https://travis-ci.org/PharoAI/RandomPartitioner)
+[![Build status](https://ci.appveyor.com/api/projects/status/lvff6yqo5bg84bsj?svg=true)](https://ci.appveyor.com/project/olekscode/apriori-9rq1r)
+[![Coverage Status](https://coveralls.io/repos/github/PharoAI/RandomPartitioner/badge.svg?branch=master)](https://coveralls.io/github/PharoAI/RandomPartitioner?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PharoAI/RandomPartitioner/master/LICENSE)
+[![Pharo version](https://img.shields.io/badge/Pharo-6.1-%23aac9ff.svg)](https://pharo.org/download)
+[![Pharo version](https://img.shields.io/badge/Pharo-7.0-%23aac9ff.svg)](https://pharo.org/download)
+[![Pharo version](https://img.shields.io/badge/Pharo-8.0-%23aac9ff.svg)](https://pharo.org/download)
+
 This is a Pharo library for partitioning a collection. Given a set of K proportions, for example 50%, 30%, and 20%, it shuffles the collection and divides it into K non-empty subsets in such a way that every element is included in exactly one subset.
 
 `RandomPartitioner` can be used in machine learning and statistical analysis for splitting the data into training, validation, and test (a.k.a. holdout) sets, or partitioning the data for cross-validation.
