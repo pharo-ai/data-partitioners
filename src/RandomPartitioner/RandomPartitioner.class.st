@@ -12,7 +12,7 @@ RandomPartitioner >> shuffle: aCollection [
 
 { #category : #'as yet unclassified' }
 RandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundaries [
-	| indices shuffledIndices previousBoundary subset |
+	| indices shuffledIndices previousBoundary subsetIndices subset |
 	
 	indices := (1 to: aCollection size) asOrderedCollection.
 	shuffledIndices := self shuffle: indices.
@@ -20,8 +20,11 @@ RandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundaries 
 	previousBoundary := 0.
 	
 	^ aCollectionOfBoundaries collect: [ :boundary |
-		subset := (previousBoundary + 1 to: boundary) collect: [ :i |
-			aCollection at: (shuffledIndices at: i) ].
+		subsetIndices := shuffledIndices copyFrom: previousBoundary + 1 to: boundary.
+		
+		"This is not the most efficient solution because it will iterate through the collection K times where K is the number of subsets. But I can't think of anything better that would make sure that the original state of aCollection is preserved in its subsets (for example its class, keys, or rowNames - check out the RandomPartitionerDataFrameTest)"
+		subset := aCollection withIndexSelect: [ :each :index |
+			subsetIndices includes: index ].
 		
 		previousBoundary := boundary.
 		subset ].
