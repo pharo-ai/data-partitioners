@@ -12,6 +12,7 @@ BaselineOfRandomPartitioner >> baseline: spec [
 		spec
 			baseline: 'DataFrame'
 			with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
+		"Note: DataFrame will only be loaded for group 'withDataFrameTests'. The default RandomPartitioner is independent of DataFrame"
 		
 		"Packages"
 		spec 
