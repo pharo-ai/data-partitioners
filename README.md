@@ -81,7 +81,18 @@ Metacello new
 Now we can load Iris dataset:
 
 ```Smalltalk
-iris := Datasets loadIris.
+irisDataset := Datasets loadIris.
 ```
 
 This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 rows and 5 columns.
+
+```Smalltalk
+partitioner := RandomPartitioner new.
+subsets := partitioner split: irisDataset withProportions: #(0.5 0.25 0.25).
+```
+
+```Smalltalk
+irisTraining := subsets first.
+irisValidation := subsets second.
+irisTest := subsets third.
+```
