@@ -44,7 +44,7 @@ subsets := partitioner split: letters withProportions: #(0.5 0.3 0.2).
 ```
 The result might look something like this:
 
-```Smalltalk
+```
 #((d h j a b)
   (i f e)
   (g c))
@@ -58,7 +58,7 @@ subsets := partitioner split: letters withSizes: #(3 7).
 
 This may produce the following partition:
 
-```Smalltalk
+```
 #((d e a) 
   (c j g f i b h))
 ```
