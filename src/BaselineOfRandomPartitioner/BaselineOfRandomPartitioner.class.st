@@ -26,8 +26,7 @@ BaselineOfRandomPartitioner >> baseline: spec [
 			group: 'withDataFrameTests' with: #('RandomPartitioner-DataFrameTests') ].
 		
 	spec
-			for: #'pharo6.x'
-			do: [
-				spec
-					package: 'RandomPartitioner-Pharo6' ].
+		for: #'pharo6.x'
+		do: [
+			spec package: 'RandomPartitioner-Pharo6' ].
 ]
