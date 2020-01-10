@@ -17,6 +17,16 @@ Metacello new
 
 ## How to depend on it?
 
+If you want to add a dependency on `RandomPartitioner` to your project, include the following lines into your baseline method:
+
+```Smalltalk
+spec
+  baseline: 'RandomPartitioner'
+  with: [ spec repository: 'github://olekscode/RandomPartitioner/src' ].
+```
+
+If you are new to baselines and Metacello, check out this wonderful [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) tutorial on Pharo Wiki.
+
 ## How to use it?
 
 ```Smalltalk
