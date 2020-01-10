@@ -67,7 +67,7 @@ This may produce the following partition:
 
 In this example, we will be splitting a real dataset into three subsets: one for training the machine learning model, one for validation (adjusting the parameters of the model) and one for testing the final result (a separate subset of data that is not used during training and allows us to evaluate how well does the model generalize by feeding it with previously unseen data).
 
-We will be working with Iris dataset of flowers - it is a simple and relatively small dataset that is widely used for teaching classification algorithms.
+We will be working with [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) of flowers - it is a simple and relatively small dataset that is widely used for teaching classification algorithms.
 
 The easiest way to quickly load Iris dataset is to install the [Pharo Datasets](https://github.com/PharoAI/Datasets) - a simple library that allows you to load various toy datasets. We install it by executing the following Metacello script:
 
