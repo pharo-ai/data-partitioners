@@ -86,12 +86,12 @@ irisDataset := Datasets loadIris.
 
 This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 rows and 5 columns.
 
+We split this data frame into three non-intersecting subsets: we will use 50% of data for training the model (75 flowers), 25% of data for validating it (37 flowers), and 25% for testing (38 flowers).
+
 ```Smalltalk
 partitioner := RandomPartitioner new.
 subsets := partitioner split: irisDataset withProportions: #(0.5 0.25 0.25).
-```
 
-```Smalltalk
 irisTraining := subsets first.
 irisValidation := subsets second.
 irisTest := subsets third.
