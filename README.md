@@ -84,7 +84,15 @@ Now we can load Iris dataset:
 irisDataset := Datasets loadIris.
 ```
 
-This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 rows and 5 columns.
+This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 rows and 5 columns. Just to ilustrate what we are working with, here are the first 5 rows of our dataset:
+
+| sepal length (cm) | sepal width (cm) | petal length (cm) | petal width (cm) | class |
+|-----|-----|-----|-----|--------|
+| 5.1 | 3.5 | 1.4 | 0.2 | setosa |
+| 4.9 | 3.0 | 1.4 | 0.2 | setosa |
+| 4.7 | 3.2 | 1.3 | 0.2 | setosa |
+| 4.6 | 3.1 | 1.5 | 0.2 | setosa |
+| 5.0 | 3.6 | 1.4 | 0.2 | setosa |
 
 We split this data frame into three non-intersecting subsets: we will use 50% of data for training the model (75 flowers), 25% of data for validating it (37 flowers), and 25% for testing (38 flowers).
 
