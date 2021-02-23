@@ -12,7 +12,7 @@ RandomPartitionerTest >> testSplitDataWithProportionsCase1 [
 	proportions := #(0.5 0.15 0.15 0.2).
 	expectedSizes := #(5 1 2 2).
 	
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: data withProportions: proportions.
 	subsetsSizes := subsets collect: #size.
 	
@@ -29,7 +29,7 @@ RandomPartitionerTest >> testSplitDataWithProportionsCase2 [
 	proportions := #(0.5 0.15 0.1 0.15 0.1).
 	expectedSizes := #(5 1 1 2 1).
 	
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: data withProportions: proportions.
 	subsetsSizes := subsets collect: #size.
 	
@@ -45,7 +45,7 @@ RandomPartitionerTest >> testSplitDataWithSizesCase1 [
 	data := #(a b c d e f g h i j).
 	sizes := #(5 2 1 2).
 	
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: data withSizes: sizes.
 	subsetsSizes := subsets collect: #size.
 	
@@ -61,7 +61,7 @@ RandomPartitionerTest >> testSplitDataWithSizesCase2 [
 	data := #(a b c d e f g h i j).
 	sizes := #(5 1 1 2 1).
 	
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: data withSizes: sizes.
 	subsetsSizes := subsets collect: #size.
 	
