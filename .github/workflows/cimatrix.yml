@@ -15,7 +15,7 @@ jobs:
   build:
     strategy:
       matrix:
-        smalltalk: [ Pharo64-9.0, Pharo64-8.0, Pharo64-7.0 ]
+        smalltalk: [ Pharo64-9.0, Pharo64-10 ]
         os: [ macos-latest, windows-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.smalltalk }} on ${{ matrix.os }}
