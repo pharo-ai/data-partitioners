@@ -1,7 +1,6 @@
 # RandomPartitioner
 
-[![Build Status](https://travis-ci.org/PharoAI/RandomPartitioner.svg?branch=master)](https://travis-ci.org/PharoAI/RandomPartitioner)
-[![Build status](https://ci.appveyor.com/api/projects/status/rvuim7w31nf8s0r9?svg=true)](https://ci.appveyor.com/project/olekscode/randompartitioner)
+![Build status](https://github.com/pharo-ai/metrics/workflows/CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/PharoAI/RandomPartitioner/badge.svg?branch=master)](https://coveralls.io/github/PharoAI/RandomPartitioner?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PharoAI/RandomPartitioner/master/LICENSE)
 [![Pharo version](https://img.shields.io/badge/Pharo-10-%23aac9ff.svg)](https://pharo.org/download)
