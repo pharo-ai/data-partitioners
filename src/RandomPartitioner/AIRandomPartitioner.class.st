@@ -34,7 +34,7 @@ AIRandomPartitioner >> shuffle: aCollection seed: aNumber [
 	^ aCollection shuffleWithSeed: aNumber
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundaries [
 	| indices shuffledIndices previousBoundary subsetIndices subset |
 	
@@ -54,7 +54,7 @@ AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundarie
 		subset ].
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundaries seed: aNumber [
 	| indices shuffledIndices previousBoundary subsetIndices subset |
 	
@@ -74,7 +74,7 @@ AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundarie
 		subset ].
 ]
 
-{ #category : #accessing }
+{ #category : #api }
 AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions [
 	| cumulativeProportions boundaries |
 
@@ -87,7 +87,7 @@ AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProporti
 	^ self split: aCollection withBoundaries: boundaries
 ]
 
-{ #category : #accessing }
+{ #category : #api }
 AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions seed: aNumber [
 	| cumulativeProportions boundaries |
 
@@ -100,7 +100,7 @@ AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProporti
 	^ self split: aCollection withBoundaries: boundaries seed: aNumber
 ]
 
-{ #category : #accessing }
+{ #category : #api }
 AIRandomPartitioner >> split: aCollection withSizes: aCollectionOfSizes [
 	| boundaries |
 
