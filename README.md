@@ -75,19 +75,19 @@ In this example, we will be splitting a real dataset into three subsets: one for
 
 We will be working with [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) of flowers - it is a simple and relatively small dataset that is widely used for teaching classification algorithms.
 
-The easiest way to quickly load Iris dataset is to install the [Pharo Datasets](https://github.com/PharoAI/Datasets) - a simple library that allows you to load various toy datasets. We install it by executing the following Metacello script:
+The easiest way to quickly load Iris dataset is to install the [Pharo Datasets](https://github.com/pharo-ai/Datasets) - a simple library that allows you to load various toy datasets. We install it by executing the following Metacello script:
 
 ```Smalltalk
 Metacello new
-  baseline: 'Datasets';
-  repository: 'github://PharoAI/Datasets';
+  baseline: 'AIDatasets';
+  repository: 'github://pharo-ai/Datasets';
   load.
 ```
 
 Now we can load Iris dataset:
 
 ```Smalltalk
-irisDataset := Datasets loadIris.
+irisDataset := AIDatasets loadIris.
 ```
 
 This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 rows and 5 columns. Just to ilustrate what we are working with, here are the first 5 rows of our dataset:
