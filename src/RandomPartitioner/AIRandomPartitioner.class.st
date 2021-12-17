@@ -22,13 +22,16 @@ Class {
 }
 
 { #category : #accessing }
-AIRandomPartitioner >> shuffle: aCollection [ 
+AIRandomPartitioner >> shuffle: aCollection [
+
 	"Default method of shuffling the elements of collection. You can override it if you need to use a different shuffling algorithm"
+
 	^ aCollection shuffle
 ]
 
 { #category : #accessing }
 AIRandomPartitioner >> shuffle: aCollection seed: aNumber [
+
 	"Default method of shuffling the elements of collection. You can override it if you need to use a different shuffling algorithm"
 
 	^ aCollection shuffleWithSeed: aNumber
@@ -76,37 +79,42 @@ AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundarie
 
 { #category : #api }
 AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions [
+
 	| cumulativeProportions boundaries |
 
 	(aCollectionOfProportions sum closeTo: 1) ifFalse: [ 
 		Error signal: 'The proportions must sum up to 1' ].
-	
+
 	cumulativeProportions := aCollectionOfProportions cumulativeSum.
-	boundaries := (cumulativeProportions * aCollection size) collect: #floor.
-	
+	boundaries := cumulativeProportions * aCollection size collect: #floor.
+
 	^ self split: aCollection withBoundaries: boundaries
 ]
 
 { #category : #api }
 AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions seed: aNumber [
-	| cumulativeProportions boundaries |
 
+	"If you want to use a fixed seed for the random numbers generator for have reproducibility"
+
+	| cumulativeProportions boundaries |
+	
 	(aCollectionOfProportions sum closeTo: 1) ifFalse: [ 
 		Error signal: 'The proportions must sum up to 1' ].
-	
+
 	cumulativeProportions := aCollectionOfProportions cumulativeSum.
-	boundaries := (cumulativeProportions * aCollection size) collect: #floor.
-	
+	boundaries := cumulativeProportions * aCollection size collect: #floor.
+
 	^ self split: aCollection withBoundaries: boundaries seed: aNumber
 ]
 
 { #category : #api }
 AIRandomPartitioner >> split: aCollection withSizes: aCollectionOfSizes [
-	| boundaries |
 
-	(aCollectionOfSizes sum = aCollection size) ifFalse: [ 
-		Error signal: 'The sizes must sum up to the size of collection' ].
+	| boundaries |
 	
+	aCollectionOfSizes sum = aCollection size ifFalse: [ 
+		Error signal: 'The sizes must sum up to the size of collection' ].
+
 	boundaries := aCollectionOfSizes cumulativeSum.
 	^ self split: aCollection withBoundaries: boundaries
 ]
