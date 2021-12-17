@@ -45,7 +45,7 @@ letters := #(a b c d e f g h i j).
 We can split it in 3 random subsets with 50%, 30%, and 20% of data respectively:
 
 ```Smalltalk
-partitioner := RandomPartitioner new.
+partitioner := AIRandomPartitioner new.
 subsets := partitioner split: letters withProportions: #(0.5 0.3 0.2).
 ```
 The result might look something like this:
@@ -75,19 +75,19 @@ In this example, we will be splitting a real dataset into three subsets: one for
 
 We will be working with [Iris dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set) of flowers - it is a simple and relatively small dataset that is widely used for teaching classification algorithms.
 
-The easiest way to quickly load Iris dataset is to install the [Pharo Datasets](https://github.com/PharoAI/Datasets) - a simple library that allows you to load various toy datasets. We install it by executing the following Metacello script:
+The easiest way to quickly load Iris dataset is to install the [Pharo Datasets](https://github.com/pharo-ai/Datasets) - a simple library that allows you to load various toy datasets. We install it by executing the following Metacello script:
 
 ```Smalltalk
 Metacello new
-  baseline: 'Datasets';
-  repository: 'github://PharoAI/Datasets';
+  baseline: 'AIDatasets';
+  repository: 'github://pharo-ai/Datasets';
   load.
 ```
 
 Now we can load Iris dataset:
 
 ```Smalltalk
-irisDataset := Datasets loadIris.
+irisDataset := AIDatasets loadIris.
 ```
 
 This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 rows and 5 columns. Just to ilustrate what we are working with, here are the first 5 rows of our dataset:
@@ -103,7 +103,7 @@ This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 
 We split this data frame into three non-intersecting subsets: we will use 50% of data for training the model (75 flowers), 25% of data for validating it (37 flowers), and 25% for testing (38 flowers).
 
 ```Smalltalk
-partitioner := RandomPartitioner new.
+partitioner := AIRandomPartitioner new.
 subsets := partitioner split: irisDataset withProportions: #(0.5 0.25 0.25).
 
 irisTraining := subsets first.
