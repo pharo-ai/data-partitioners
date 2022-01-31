@@ -18,7 +18,7 @@ subsets := partitioner split: letters withProportions: #(0.5 0.3 0.2).
 Class {
 	#name : #AIRandomPartitioner,
 	#superclass : #Object,
-	#category : #RandomPartitioner
+	#category : #'AI-RandomPartitioner'
 }
 
 { #category : #accessing }

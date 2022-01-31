@@ -1,11 +1,11 @@
 Class {
-	#name : #RandomPartitionerDataFrameTest,
+	#name : #AIRandomPartitionerDataFrameTest,
 	#superclass : #TestCase,
-	#category : #'RandomPartitioner-DataFrameTests'
+	#category : #'AI-RandomPartitioner-DataFrameTests'
 }
 
 { #category : #tests }
-RandomPartitionerDataFrameTest >> testPartitionDataFrameWithCustomRowNames [
+AIRandomPartitionerDataFrameTest >> testPartitionDataFrameWithCustomRowNames [
 	| dataFrame sizes partitioner subsets |
 	
 	dataFrame := DataFrame
@@ -31,7 +31,7 @@ RandomPartitionerDataFrameTest >> testPartitionDataFrameWithCustomRowNames [
 ]
 
 { #category : #tests }
-RandomPartitionerDataFrameTest >> testPartitionDataSeriesWithCustomKeys [
+AIRandomPartitionerDataFrameTest >> testPartitionDataSeriesWithCustomKeys [
 	| series sizes partitioner subsets |
 	
 	series := DataSeries
@@ -55,7 +55,7 @@ RandomPartitionerDataFrameTest >> testPartitionDataSeriesWithCustomKeys [
 ]
 
 { #category : #tests }
-RandomPartitionerDataFrameTest >> testPartitionDataSeriesWithDefaultKeys [
+AIRandomPartitionerDataFrameTest >> testPartitionDataSeriesWithDefaultKeys [
 	| series sizes partitioner subsets |
 	
 	series := DataSeries

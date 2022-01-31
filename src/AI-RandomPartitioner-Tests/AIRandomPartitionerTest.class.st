@@ -1,11 +1,11 @@
 Class {
-	#name : #RandomPartitionerTest,
+	#name : #AIRandomPartitionerTest,
 	#superclass : #TestCase,
-	#category : #'RandomPartitioner-Tests'
+	#category : #'AI-RandomPartitioner-Tests'
 }
 
 { #category : #tests }
-RandomPartitionerTest >> testSplitDataWithProportionsCase1 [
+AIRandomPartitionerTest >> testSplitDataWithProportionsCase1 [
 	| data proportions expectedSizes partitioner subsets subsetsSizes |
 	
 	data := #(a b c d e f g h i j).
@@ -22,7 +22,7 @@ RandomPartitionerTest >> testSplitDataWithProportionsCase1 [
 ]
 
 { #category : #tests }
-RandomPartitionerTest >> testSplitDataWithProportionsCase2 [
+AIRandomPartitionerTest >> testSplitDataWithProportionsCase2 [
 	| data proportions expectedSizes partitioner subsets subsetsSizes |
 	
 	data := #(a b c d e f g h i j).
@@ -39,7 +39,7 @@ RandomPartitionerTest >> testSplitDataWithProportionsCase2 [
 ]
 
 { #category : #tests }
-RandomPartitionerTest >> testSplitDataWithSizesCase1 [
+AIRandomPartitionerTest >> testSplitDataWithSizesCase1 [
 	| data sizes partitioner subsets subsetsSizes |
 	
 	data := #(a b c d e f g h i j).
@@ -55,7 +55,7 @@ RandomPartitionerTest >> testSplitDataWithSizesCase1 [
 ]
 
 { #category : #tests }
-RandomPartitionerTest >> testSplitDataWithSizesCase2 [
+AIRandomPartitionerTest >> testSplitDataWithSizesCase2 [
 	| data sizes partitioner subsets subsetsSizes |
 	
 	data := #(a b c d e f g h i j).
