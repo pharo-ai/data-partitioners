@@ -16,7 +16,7 @@ To install `RandomPartitioner`, go to the Playground (Ctrl+OW) in your [Pharo](h
 
 ```Smalltalk
 Metacello new
-  baseline: 'RandomPartitioner';
+  baseline: 'AIRandomPartitioner';
   repository: 'github://pharo-ai/RandomPartitioner/src';
   load.
 ```
@@ -27,7 +27,7 @@ If you want to add a dependency on `RandomPartitioner` to your project, include 
 
 ```Smalltalk
 spec
-  baseline: 'RandomPartitioner'
+  baseline: 'AIRandomPartitioner'
   with: [ spec repository: 'github://pharo-ai/RandomPartitioner/src' ].
 ```
 
