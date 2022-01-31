@@ -17,7 +17,7 @@ AIRandomPartitionerDataFrameTest >> testPartitionDataFrameWithCustomRowNames [
 		
 	sizes := #(4 3).
 		
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: dataFrame withSizes: sizes.
 	
 	self assert: (subsets collect: #size) equals: sizes.
@@ -41,7 +41,7 @@ AIRandomPartitionerDataFrameTest >> testPartitionDataSeriesWithCustomKeys [
 		
 	sizes := #(4 3).
 		
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: series withSizes: sizes.
 	
 	self assert: (subsets collect: #size) equals: sizes.
@@ -64,7 +64,7 @@ AIRandomPartitionerDataFrameTest >> testPartitionDataSeriesWithDefaultKeys [
 		
 	sizes := #(4 3).
 		
-	partitioner := RandomPartitioner new.
+	partitioner := AIRandomPartitioner new.
 	subsets := partitioner split: series withSizes: sizes.
 	
 	self assert: (subsets collect: #size) equals: sizes.
