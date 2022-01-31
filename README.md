@@ -1,4 +1,4 @@
-# RandomPartitioner
+# Random Partitioner
 
 [![Build status](https://github.com/pharo-ai/RandomPartitioner/workflows/CI/badge.svg)](https://github.com/pharo-ai/RandomPartitioner/actions/workflows/test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/PharoAI/RandomPartitioner/badge.svg?branch=master)](https://coveralls.io/github/PharoAI/RandomPartitioner?branch=master)
@@ -69,7 +69,7 @@ This may produce the following partition:
   (c j g f i b h))
 ```
 
-### Practical example: training, validation, and test sets
+### Practical example: training, validation, and test sets with a real Dataset
 
 In this example, we will be splitting a real dataset into three subsets: one for training the machine learning model, one for validation (adjusting the parameters of the model) and one for testing the final result (a separate subset of data that is not used during training and allows us to evaluate how well does the model generalize by feeding it with previously unseen data).
 
