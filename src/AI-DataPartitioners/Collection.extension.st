@@ -1,6 +1,6 @@
 Extension { #name : #Collection }
 
-{ #category : #'*AI-RandomPartitioner' }
+{ #category : #'*AI-DataPartitioners' }
 Collection >> cumulativeSum [
 	| sum |
 	sum := 0.

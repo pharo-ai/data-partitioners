@@ -1,14 +1,13 @@
 SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'AIRandomPartitioner',
-      #directory : 'src',
-      #platforms : [ #pharo ]
+      #baseline : 'AIDataPartitioners',
+      #directory : 'src'
     }
   ],
   #testing : {
     #coverage : {
-      #packages : [ 'AI-RandomPartitioner*' ]
+      #packages : [ 'AI-DataPartitioners*' ]
     }
   }
 }

@@ -1,7 +1,7 @@
 Class {
 	#name : #AIRandomPartitionerDataFrameTest,
 	#superclass : #TestCase,
-	#category : #'AI-RandomPartitioner-DataFrameTests'
+	#category : #'AI-DataPartitioners-DataFrameTests'
 }
 
 { #category : #tests }
