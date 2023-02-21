@@ -5,11 +5,10 @@ RandomPartitioner can be used in machine learning and statistical analysis for s
 
 How to use it:
 
-```
+```st
 letters := #(a b c d e f g h i j).
 
-partitioner := RandomPartitioner new.
-subsets := partitioner split: letters withProportions: #(0.5 0.3 0.2).
+subsets := AIRandomPartitioner split: letters withProportions: #(0.5 0.3 0.2).
 ""#((d h j a b)
   (i f e)
   (g c))""
@@ -18,7 +17,7 @@ subsets := partitioner split: letters withProportions: #(0.5 0.3 0.2).
 Class {
 	#name : #AIRandomPartitioner,
 	#superclass : #Object,
-	#category : #'AI-RandomPartitioner'
+	#category : #'AI-DataPartitioners'
 }
 
 { #category : #api }
