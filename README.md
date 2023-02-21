@@ -45,8 +45,7 @@ letters := #(a b c d e f g h i j).
 We can split it in 3 random subsets with 50%, 30%, and 20% of data respectively:
 
 ```Smalltalk
-partitioner := AIRandomPartitioner new.
-subsets := partitioner split: letters withProportions: #(0.5 0.3 0.2).
+subsets := AIRandomPartitioner split: letters withProportions: #(0.5 0.3 0.2).
 ```
 The result might look something like this:
 
@@ -59,7 +58,7 @@ The result might look something like this:
 Alternatively, you might want to specify exact sizes of each partition. Let's split the array in two random subset with 3 and 7 elements:
 
 ```Smalltalk
-subsets := partitioner split: letters withSizes: #(3 7).
+subsets := AIRandomPartitioner split: letters withSizes: #(3 7).
 ```
 
 This may produce the following partition:
@@ -103,8 +102,7 @@ This gives us a [data frame](https://github.com/PolyMathOrg/DataFrame) with 150 
 We split this data frame into three non-intersecting subsets: we will use 50% of data for training the model (75 flowers), 25% of data for validating it (37 flowers), and 25% for testing (38 flowers).
 
 ```Smalltalk
-partitioner := AIRandomPartitioner new.
-subsets := partitioner split: irisDataset withProportions: #(0.5 0.25 0.25).
+subsets := AIRandomPartitioner split: irisDataset withProportions: #(0.5 0.25 0.25).
 
 irisTraining := subsets first.
 irisValidation := subsets second.
