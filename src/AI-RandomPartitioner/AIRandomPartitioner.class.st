@@ -21,6 +21,36 @@ Class {
 	#category : #'AI-RandomPartitioner'
 }
 
+{ #category : #api }
+AIRandomPartitioner class >> split: aCollection withBoundaries: aCollectionOfBoundaries [
+
+	^ self new split: aCollection withBoundaries: aCollectionOfBoundaries
+]
+
+{ #category : #api }
+AIRandomPartitioner class >> split: aCollection withBoundaries: aCollectionOfBoundaries seed: aNumber [
+
+	^ self new split: aCollection withBoundaries: aCollectionOfBoundaries seed: aNumber
+]
+
+{ #category : #api }
+AIRandomPartitioner class >> split: aCollection withProportions: aCollectionOfProportions [
+
+	^ self new split: aCollection withProportions: aCollectionOfProportions
+]
+
+{ #category : #api }
+AIRandomPartitioner class >> split: aCollection withProportions: aCollectionOfProportions seed: aNumber [
+
+	^ self new split: aCollection withProportions: aCollectionOfProportions seed: aNumber
+]
+
+{ #category : #api }
+AIRandomPartitioner class >> split: aCollection withSizes: aCollectionOfSizes [
+
+	^ self new split: aCollection withSizes: aCollectionOfSizes
+]
+
 { #category : #accessing }
 AIRandomPartitioner >> shuffle: aCollection [
 
