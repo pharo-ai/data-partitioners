@@ -34,13 +34,25 @@ Class {
 BaselineOfAIDataPartitioners >> baseline: spec [
 
 	<baseline>
-	spec for: #common do: [ "Packages"
+	spec for: #common do: [ "External dependencies"
+		self dataFrame: spec.
+
+		"Packages"
 		spec
 			package: 'AI-DataPartitioners';
-			package: 'AI-DataPartitioners-Tests' with: [ spec requires: #( 'AI-DataPartitioners' ) ].
+			package: 'AI-DataPartitioners-Tests' with: [ spec requires: #( 'AI-DataPartitioners' ) ];
+			package: 'AI-DataPartitioners-DataFrameTests' with: [ spec requires: #( 'AI-DataPartitioners-Tests' 'AIExternalDataFrame' ) ].
 
 		"Groups"
 		spec
+			group: 'default' with: #( 'Core' 'Tests' );
 			group: 'Core' with: #( 'AI-DataPartitioners' );
+			group: 'DataFrame' with: #( 'AI-DataPartitioners-DataFrameTests' );
 			group: 'Tests' with: #( 'AI-DataPartitioners' 'AI-DataPartitioners-Tests' ) ]
+]
+
+{ #category : #accessing }
+BaselineOfAIDataPartitioners >> dataFrame: spec [
+
+	spec baseline: 'AIExternalDataFrame' with: [ spec repository: 'github://pharo-ai/external-dependencies' ]
 ]
