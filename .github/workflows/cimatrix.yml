@@ -13,10 +13,10 @@ jobs:
         config: [ .smalltalk.ston, .smalltalkDataFrame.ston ]
     name: ${{ matrix.smalltalk }} - ${{ matrix.config }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: hpi-swa/setup-smalltalkCI@v1
         with:
-          smalltalk-version: ${{ matrix.smalltalk }}
+          smalltalk-image: ${{ matrix.smalltalk }}
       - run: smalltalkci -s ${{ matrix.smalltalk }} ${{ matrix.config }}
         shell: bash
         timeout-minutes: 15
