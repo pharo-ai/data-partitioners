@@ -1,0 +1,9 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'AIDataPartitioners',
+      #directory : 'src',
+      #load : [ 'DataFrame' ]
+    }
+  ]
+}
