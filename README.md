@@ -1,7 +1,7 @@
 # Data Partitioners
 
 [![CI](https://github.com/pharo-ai/data-partitioners/actions/workflows/cimatrix.yml/badge.svg)](https://github.com/pharo-ai/data-partitioners/actions/workflows/cimatrix.yml)
-[![Coverage Status](https://coveralls.io/repos/github/PharoAI/RandomPartitioner/badge.svg?branch=master)](https://coveralls.io/github/PharoAI/RandomPartitioner?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/pharo-ai/data-partitioners/badge.svg?branch=master)](https://coveralls.io/github/pharo-ai/data-partitioners?branch=master)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PharoAI/RandomPartitioner/master/LICENSE)
 [![Pharo version](https://img.shields.io/badge/Pharo-10-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo version](https://img.shields.io/badge/Pharo-9.0-%23aac9ff.svg)](https://pharo.org/download)
