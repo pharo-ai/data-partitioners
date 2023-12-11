@@ -15,50 +15,61 @@ subsets := AIRandomPartitioner split: letters withProportions: #(0.5 0.3 0.2).
 ```
 "
 Class {
-	#name : #AIRandomPartitioner,
-	#superclass : #Object,
-	#category : #'AI-DataPartitioners'
+	#name : 'AIRandomPartitioner',
+	#superclass : 'Object',
+	#category : 'AI-DataPartitioners',
+	#package : 'AI-DataPartitioners'
 }
 
-{ #category : #api }
+{ #category : 'api' }
 AIRandomPartitioner class >> split: aCollection withBoundaries: aCollectionOfBoundaries [
 
 	^ self new split: aCollection withBoundaries: aCollectionOfBoundaries
 ]
 
-{ #category : #api }
+{ #category : 'api' }
 AIRandomPartitioner class >> split: aCollection withBoundaries: aCollectionOfBoundaries seed: aNumber [
 
 	^ self new split: aCollection withBoundaries: aCollectionOfBoundaries seed: aNumber
 ]
 
-{ #category : #api }
+{ #category : 'api' }
 AIRandomPartitioner class >> split: aCollection withProportions: aCollectionOfProportions [
 
 	^ self new split: aCollection withProportions: aCollectionOfProportions
 ]
 
-{ #category : #api }
+{ #category : 'api' }
 AIRandomPartitioner class >> split: aCollection withProportions: aCollectionOfProportions seed: aNumber [
 
 	^ self new split: aCollection withProportions: aCollectionOfProportions seed: aNumber
 ]
 
-{ #category : #api }
+{ #category : 'api' }
+AIRandomPartitioner class >> split: aCollection withProportions: aCollectionOfProportions shuffle: aBoolean [
+	"Split aCollection into multiple sets. The sets to split are determined by the size of aCollectionOfProportions, which looks like #(0.7 0.3), and commonly it represents splitting between a training and test set."
+
+	^ self new 
+		split: aCollection 
+		withProportions: aCollectionOfProportions 
+		shuffle: aBoolean
+]
+
+{ #category : 'api' }
 AIRandomPartitioner class >> split: aCollection withSizes: aCollectionOfSizes [
 
 	^ self new split: aCollection withSizes: aCollectionOfSizes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AIRandomPartitioner >> shuffle: aCollection [
 
 	"Default method of shuffling the elements of collection. You can override it if you need to use a different shuffling algorithm"
 
-	^ aCollection shuffle
+	^ aCollection shuffled
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 AIRandomPartitioner >> shuffle: aCollection seed: aNumber [
 	"Default method of shuffling the elements of collection. You can override it if you need to use a different shuffling algorithm"
 
@@ -67,13 +78,13 @@ AIRandomPartitioner >> shuffle: aCollection seed: aNumber [
 	^ aCollection shuffleWithSeed: aNumber
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundaries [
 
 	^ self split: aCollection withBoundaries: aCollectionOfBoundaries seed: nil
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundaries seed: aNumber [
 
 	| shuffledIndices previousBoundary |
@@ -88,13 +99,13 @@ AIRandomPartitioner >> split: aCollection withBoundaries: aCollectionOfBoundarie
 		  res ]
 ]
 
-{ #category : #api }
+{ #category : 'api' }
 AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions [
 
 	^ self split: aCollection withProportions: aCollectionOfProportions seed: nil
 ]
 
-{ #category : #api }
+{ #category : 'api' }
 AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions seed: aNumber [
 	"If you want to use a fixed seed for the random numbers generator for have reproducibility"
 
@@ -107,7 +118,19 @@ AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProporti
 	^ self split: aCollection withBoundaries: boundaries seed: aNumber
 ]
 
-{ #category : #api }
+{ #category : 'api' }
+AIRandomPartitioner >> split: aCollection withProportions: aCollectionOfProportions shuffle: aBoolean [
+	"See class side comment."
+
+	| targetCollection |
+	
+	targetCollection := aBoolean 
+		ifTrue: [ self shuffle: aCollection ]
+		ifFalse: [ aCollection ].
+	^ self split: targetCollection withProportions: aCollectionOfProportions seed: nil
+]
+
+{ #category : 'api' }
 AIRandomPartitioner >> split: aCollection withSizes: aCollectionOfSizes [
 
 	| boundaries |
