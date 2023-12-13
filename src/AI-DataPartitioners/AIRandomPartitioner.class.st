@@ -139,3 +139,25 @@ AIRandomPartitioner >> split: aCollection withSizes: aCollectionOfSizes [
 	boundaries := aCollectionOfSizes cumulativeSum.
 	^ self split: aCollection withBoundaries: boundaries
 ]
+
+{ #category : 'api' }
+AIRandomPartitioner >> splitTrainTestFromFeatures: aDataFrame usingTarget: targetCollection withProportions: aTwoElementCollectionOfProportions shuffle: aBoolean [ 
+	"Answer a <AIPartitionedDataSet>. 	Split the receiver's data into two sets: train and test.
+	
+	xTrain and yTrain sets are used for training and fitting the model.
+	xTest and yTest sets are used for testing the model.
+	"
+
+	| partition |
+	partition := self 
+		split: aDataFrame 
+		withProportions: aTwoElementCollectionOfProportions 
+		shuffle: aBoolean.
+	^ AIPartitionedDataSet new
+		xTrain: (partition first columnsAllBut: targetCollection);
+		yTrain: (partition first columns: targetCollection);
+
+		xTest: (partition second columnsAllBut: targetCollection);
+		yTest: (partition second columns: targetCollection);
+		yourself
+]

@@ -1,10 +1,11 @@
 Class {
-	#name : #AIRandomPartitionerTest,
-	#superclass : #TestCase,
-	#category : #'AI-DataPartitioners-Tests'
+	#name : 'AIRandomPartitionerTest',
+	#superclass : 'TestCase',
+	#category : 'AI-DataPartitioners-Tests',
+	#package : 'AI-DataPartitioners-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 AIRandomPartitionerTest >> testSplitDataWithProportionsCase1 [
 
 	| data proportions expectedSizes subsets subsetsSizes |
@@ -20,7 +21,7 @@ AIRandomPartitionerTest >> testSplitDataWithProportionsCase1 [
 	self assert: subsetsSizes equals: expectedSizes
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AIRandomPartitionerTest >> testSplitDataWithProportionsCase2 [
 
 	| data proportions expectedSizes subsets subsetsSizes |
@@ -36,7 +37,7 @@ AIRandomPartitionerTest >> testSplitDataWithProportionsCase2 [
 	self assert: subsetsSizes equals: expectedSizes
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AIRandomPartitionerTest >> testSplitDataWithSizesCase1 [
 
 	| data sizes subsets subsetsSizes |
@@ -51,7 +52,7 @@ AIRandomPartitionerTest >> testSplitDataWithSizesCase1 [
 	self assert: subsetsSizes equals: sizes
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AIRandomPartitionerTest >> testSplitDataWithSizesCase2 [
 
 	| data sizes subsets subsetsSizes |
@@ -64,4 +65,13 @@ AIRandomPartitionerTest >> testSplitDataWithSizesCase2 [
 	self assert: subsets size equals: 5.
 	self assert: subsetsSizes sum equals: data size.
 	self assert: subsetsSizes equals: sizes
+]
+
+{ #category : 'tests' }
+AIRandomPartitionerTest >> testSplitTrainTestFromFeaturesUsingTargetWithProportionsShuffle [
+
+	| expected |
+	
+	expected := self.
+	self assert: false
 ]
