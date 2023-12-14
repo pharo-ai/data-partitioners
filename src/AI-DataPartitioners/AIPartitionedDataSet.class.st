@@ -24,6 +24,34 @@ Class {
 	#package : 'AI-DataPartitioners'
 }
 
+{ #category : 'comparing' }
+AIPartitionedDataSet >> = aPartitionedDataSet [
+
+	self == aPartitionedDataSet 
+		ifTrue: [ ^ true ].
+	self class = aPartitionedDataSet class
+		ifFalse: [ ^ false ].
+	self xTest = aPartitionedDataSet xTest
+		ifFalse: [ ^ false ].
+	self yTest = aPartitionedDataSet yTest
+		ifFalse: [ ^ false ].
+	self xTrain = aPartitionedDataSet xTrain
+		ifFalse: [ ^ false ].
+	self yTrain = aPartitionedDataSet yTrain
+		ifFalse: [ ^ false ].
+	^ true
+]
+
+{ #category : 'comparing' }
+AIPartitionedDataSet >> hash [
+	"hash is implemented because #= is implemented"
+
+	^ self species hash 
+		bitXor: (self xTest hash 
+			bitXor: (self xTrain hash bitXor: (self yTest hash 
+				bitXor: self yTrain hash)))
+]
+
 { #category : 'accessing' }
 AIPartitionedDataSet >> xTest [
 

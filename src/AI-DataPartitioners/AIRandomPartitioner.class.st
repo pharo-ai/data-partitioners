@@ -141,7 +141,30 @@ AIRandomPartitioner >> split: aCollection withSizes: aCollectionOfSizes [
 ]
 
 { #category : 'api' }
-AIRandomPartitioner >> splitTrainTestFromFeatures: aDataFrame usingTarget: targetCollection withProportions: aTwoElementCollectionOfProportions shuffle: aBoolean [ 
+AIRandomPartitioner >> splitTrainTestFrom: aDataFrame usingTargetColumn: targetCollection withProportions: aTwoElementCollectionOfProportions seed: aNumber [ 
+	"Answer a <AIPartitionedDataSet>. 	Split the receiver's data into two sets: train and test.
+	
+	xTrain and yTrain sets are used for training and fitting the model.
+	xTest and yTest sets are used for testing the model.
+	"
+
+	| partition |
+
+	partition := self 
+		split: aDataFrame 
+		withProportions: aTwoElementCollectionOfProportions 
+		seed: aNumber.
+	^ AIPartitionedDataSet new
+		xTrain: (partition first columnsAllBut: targetCollection);
+		yTrain: (partition first columns: targetCollection);
+
+		xTest: (partition second columnsAllBut: targetCollection);
+		yTest: (partition second columns: targetCollection);
+		yourself
+]
+
+{ #category : 'api' }
+AIRandomPartitioner >> splitTrainTestFrom: aDataFrame usingTargetColumn: targetCollection withProportions: aTwoElementCollectionOfProportions shuffle: aBoolean [ 
 	"Answer a <AIPartitionedDataSet>. 	Split the receiver's data into two sets: train and test.
 	
 	xTrain and yTrain sets are used for training and fitting the model.
