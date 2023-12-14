@@ -1,1 +1,1 @@
-Package { #name : #'AI-DataPartitioners-DataFrameTests' }
+Package { #name : 'AI-DataPartitioners-DataFrameTests' }

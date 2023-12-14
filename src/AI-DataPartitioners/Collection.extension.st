@@ -1,6 +1,6 @@
-Extension { #name : #Collection }
+Extension { #name : 'Collection' }
 
-{ #category : #'*AI-DataPartitioners' }
+{ #category : '*AI-DataPartitioners' }
 Collection >> cumulativeSum [
 	| sum |
 	sum := 0.

@@ -1,10 +1,11 @@
 Class {
-	#name : #AIHashPartitionerDataFrameTest,
-	#superclass : #TestCase,
-	#category : #'AI-DataPartitioners-DataFrameTests'
+	#name : 'AIHashPartitionerDataFrameTest',
+	#superclass : 'TestCase',
+	#category : 'AI-DataPartitioners-DataFrameTests',
+	#package : 'AI-DataPartitioners-DataFrameTests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 AIHashPartitionerDataFrameTest >> testPartitionDataFrameWithCustomRowNames [
 
 	| dataFrame proportions subsets |
