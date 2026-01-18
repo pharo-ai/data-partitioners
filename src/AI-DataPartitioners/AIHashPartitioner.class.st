@@ -30,18 +30,19 @@ subsets := AIHashPartitioner split: dataFrame withProportions: #(0.8 0.2).
 ```
 "
 Class {
-	#name : #AIHashPartitioner,
-	#superclass : #Object,
-	#category : #'AI-DataPartitioners'
+	#name : 'AIHashPartitioner',
+	#superclass : 'Object',
+	#category : 'AI-DataPartitioners',
+	#package : 'AI-DataPartitioners'
 }
 
-{ #category : #api }
+{ #category : 'api' }
 AIHashPartitioner class >> split: aCollection withProportions: aCollectionOfProportions [
 
 	^ self new split: aCollection withProportions: aCollectionOfProportions
 ]
 
-{ #category : #api }
+{ #category : 'api' }
 AIHashPartitioner >> split: aCollection withProportions: aCollectionOfProportions [
 
 	| cumulativeProportionsMap indexesMap |

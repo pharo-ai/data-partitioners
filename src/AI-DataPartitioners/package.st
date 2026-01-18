@@ -1,1 +1,1 @@
-Package { #name : #'AI-DataPartitioners' }
+Package { #name : 'AI-DataPartitioners' }

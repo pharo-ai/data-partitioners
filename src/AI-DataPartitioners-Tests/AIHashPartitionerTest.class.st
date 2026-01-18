@@ -1,10 +1,11 @@
 Class {
-	#name : #AIHashPartitionerTest,
-	#superclass : #TestCase,
-	#category : #'AI-DataPartitioners-Tests'
+	#name : 'AIHashPartitionerTest',
+	#superclass : 'TestCase',
+	#category : 'AI-DataPartitioners-Tests',
+	#package : 'AI-DataPartitioners-Tests'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 AIHashPartitionerTest >> testSplitDataWithProportionsCase1 [
 
 	| data proportions expectedSizes subsets subsetsSizes |

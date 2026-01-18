@@ -1,18 +1,18 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*AI-DataPartitioners' }
+{ #category : '*AI-DataPartitioners' }
 SequenceableCollection >> indexOfRowNamed: aName [
 
 	^ self indexOf: aName
 ]
 
-{ #category : #'*AI-DataPartitioners' }
+{ #category : '*AI-DataPartitioners' }
 SequenceableCollection >> rowNames [
 
 	^ self
 ]
 
-{ #category : #'*AI-DataPartitioners' }
+{ #category : '*AI-DataPartitioners' }
 SequenceableCollection >> shuffleWithSeed: aNumber [
 	" Fix the random seed with aNumber to ensure reproducibility "
 
